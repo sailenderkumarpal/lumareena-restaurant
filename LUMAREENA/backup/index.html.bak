@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LUMORA — Modern Kitchen. Modern cuisine, thoughtfully crafted with seasonal ingredients and unforgettable flavors. A demo restaurant website."
+    />
+    <title>LUMORA — Modern Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a href="#home" class="nav__logo" aria-label="LUMORA home">
+          <span class="nav__mark">L</span>
+          <span class="nav__word">LUMORA</span>
+        </a>
+
+        <nav class="nav__links" id="navLinks" aria-label="Primary">
+          <a href="#home" class="nav__link">Home</a>
+          <a href="#menu" class="nav__link">Menu</a>
+          <a href="#about" class="nav__link">About</a>
+          <a href="#gallery" class="nav__link">Gallery</a>
+          <a href="#contact" class="nav__link">Contact</a>
+          <a href="#reserve" class="btn btn--small nav__cta">Reserve a Table</a>
+        </nav>
+
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="hero__eyebrow reveal">Modern Kitchen · Est. 2024</p>
+        <h1 class="hero__title reveal">
+          Where Every Plate <em>Tells a Story</em>
+        </h1>
+        <p class="hero__text reveal">
+          Modern cuisine, thoughtfully crafted with seasonal ingredients and
+          unforgettable flavors.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#menu" class="btn btn--primary">Explore Menu</a>
+          <a href="#reserve" class="btn btn--ghost">Reserve a Table</a>
+        </div>
+        <div class="hero__meta reveal">
+          <div><strong>18+</strong><span>Seasonal Dishes</span></div>
+          <div><strong>Farm</strong><span>Fresh Sourcing</span></div>
+          <div><strong>Nightly</strong><span>Chef's Tasting</span></div>
+        </div>
+      </div>
+      <a href="#featured" class="hero__scroll" aria-label="Scroll to content">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ FEATURED DISHES ============ -->
+    <section class="section featured" id="featured">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Signature Selection</p>
+          <h2 class="section__title">Featured Dishes</h2>
+          <p class="section__sub">
+            A rotating showcase of the plates our kitchen is most proud of —
+            composed with intention, plated with care.
+          </p>
+        </div>
+
+        <div class="cards" id="featuredCards"></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__media reveal">
+          <img
+            src="https://images.pexels.com/photos/28575445/pexels-photo-28575445.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=800"
+            alt="Warm LUMORA dining room with elegant leather seating"
+            loading="lazy"
+            width="800"
+            height="900"
+          />
+          <div class="about__badge">
+            <strong>Since 2024</strong>
+            <span>Crafted with care</span>
+          </div>
+        </div>
+        <div class="about__body reveal">
+          <p class="eyebrow">Our Story</p>
+          <h2 class="section__title">A Modern Table, Rooted in Craft</h2>
+          <p>
+            LUMORA is a modern kitchen built around a simple belief: great food
+            begins with great ingredients and the patience to let them shine. We
+            partner with regional growers and small producers to bring the season
+            directly to your table.
+          </p>
+          <p>
+            Our dining room is designed to feel warm and unhurried — a place to
+            linger over conversation, discover new flavors, and make an ordinary
+            evening feel a little more memorable.
+          </p>
+          <ul class="about__list">
+            <li>Seasonal, ingredient-led menus</li>
+            <li>Locally sourced &amp; sustainable</li>
+            <li>Handcrafted from scratch, daily</li>
+          </ul>
+          <a href="#reserve" class="btn btn--primary">Reserve a Table</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Explore</p>
+          <h2 class="section__title">The Menu</h2>
+          <p class="section__sub">
+            Thoughtfully composed courses that change with the seasons. Filter by
+            category to find your next favorite.
+          </p>
+        </div>
+
+        <div class="menu__filters reveal" id="menuFilters" role="tablist">
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="starters">Starters</button>
+          <button class="chip" data-filter="mains">Main Course</button>
+          <button class="chip" data-filter="desserts">Desserts</button>
+          <button class="chip" data-filter="drinks">Drinks</button>
+        </div>
+
+        <div class="menu__grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ CHEF / EXPERIENCE ============ -->
+    <section class="section chef" id="experience">
+      <div class="container chef__grid">
+        <div class="chef__body reveal">
+          <p class="eyebrow eyebrow--light">Culinary Philosophy</p>
+          <h2 class="section__title section__title--light">
+            Cooking as a Quiet Act of Generosity
+          </h2>
+          <p>
+            Every service begins before sunrise, with produce chosen by hand and
+            menus shaped by what's at its peak. We cook with restraint — letting a
+            few excellent ingredients speak clearly rather than crowding the plate.
+          </p>
+          <p>
+            It's an approach built on respect: for the grower, for the guest, and
+            for the craft itself. The result is food that feels honest, modern,
+            and made to be shared.
+          </p>
+          <div class="chef__stats">
+            <div><strong>Seasonal</strong><span>Menus rewritten monthly</span></div>
+            <div><strong>Scratch</strong><span>Sauces, breads &amp; stocks</span></div>
+            <div><strong>Local</strong><span>Regional partner farms</span></div>
+          </div>
+        </div>
+        <div class="chef__media reveal">
+          <img
+            src="https://images.pexels.com/photos/4253130/pexels-photo-4253130.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1000&w=800"
+            alt="LUMORA chef plating a dish in the kitchen"
+            loading="lazy"
+            width="800"
+            height="1000"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">A Glimpse Inside</p>
+          <h2 class="section__title">Gallery</h2>
+          <p class="section__sub">
+            Moments from the kitchen, the dining room, and the plates in between.
+          </p>
+        </div>
+        <div class="gallery__grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Kind Words</p>
+          <h2 class="section__title">What Guests Say</h2>
+          <p class="section__sub demo-note">
+            Note: the reviews below are sample / demo content created for this
+            portfolio project.
+          </p>
+        </div>
+        <div class="testimonials__grid" id="testimonialsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ RESERVATION CTA ============ -->
+    <section class="reserve-cta" id="reserve">
+      <div class="reserve-cta__overlay" aria-hidden="true"></div>
+      <div class="container reserve-cta__inner reveal">
+        <p class="eyebrow eyebrow--light">Reservations</p>
+        <h2 class="reserve-cta__title">Make Your Evening Memorable</h2>
+        <p class="reserve-cta__text">
+          Join us for an unhurried dinner crafted around the season. We'll take
+          care of the rest.
+        </p>
+        <a href="#contact" class="btn btn--primary btn--lg">Reserve a Table</a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__info reveal">
+          <p class="eyebrow">Visit &amp; Reserve</p>
+          <h2 class="section__title">Get in Touch</h2>
+          <p class="contact__lead">
+            Book a table or send us a note. For same-day reservations, a quick
+            call is best.
+          </p>
+
+          <ul class="contact__details">
+            <li>
+              <span class="contact__icon" aria-hidden="true">📍</span>
+              <div>
+                <strong>Address</strong>
+                <p>24 Rivergate Lane, Suite 3<br />Demo City, DC 10101 <em>(demo location)</em></p>
+              </div>
+            </li>
+            <li>
+              <span class="contact__icon" aria-hidden="true">🕑</span>
+              <div>
+                <strong>Opening Hours</strong>
+                <p>Tue – Sun · 5:00 PM – 11:00 PM<br />Closed Mondays</p>
+              </div>
+            </li>
+            <li>
+              <span class="contact__icon" aria-hidden="true">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p>+1 (000) 000‑0000 <em>(placeholder)</em></p>
+              </div>
+            </li>
+            <li>
+              <span class="contact__icon" aria-hidden="true">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <p>hello@lumora-demo.example <em>(placeholder)</em></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact__form-wrap reveal">
+          <form class="form" id="reservationForm" novalidate>
+            <h3 class="form__title">Reserve a Table</h3>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" />
+                <small class="field__error" data-error="name"></small>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" />
+                <small class="field__error" data-error="email"></small>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" />
+                <small class="field__error" data-error="date"></small>
+              </div>
+              <div class="field">
+                <label for="guests">Guests</label>
+                <select id="guests" name="guests">
+                  <option value="">Select…</option>
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6+ guests</option>
+                </select>
+                <small class="field__error" data-error="guests"></small>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Special Requests <span>(optional)</span></label>
+              <textarea id="message" name="message" rows="3" placeholder="Allergies, celebrations, seating preferences…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">Confirm Reservation</button>
+            <p class="form__success" id="formSuccess" role="status" hidden>
+              Thank you! Your reservation request has been received (demo only —
+              no data is sent).
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a href="#home" class="nav__logo">
+            <span class="nav__mark">L</span>
+            <span class="nav__word">LUMORA</span>
+          </a>
+          <p>
+            Modern cuisine, thoughtfully crafted with seasonal ingredients and
+            unforgettable flavors.
+          </p>
+        </div>
+
+        <nav class="footer__col" aria-label="Footer">
+          <h4>Explore</h4>
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <p>24 Rivergate Lane<br />Demo City, DC 10101</p>
+          <p>Tue – Sun · 5–11 PM</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Follow</h4>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram (placeholder)">Instagram</a>
+            <a href="#" aria-label="Facebook (placeholder)">Facebook</a>
+            <a href="#" aria-label="Pinterest (placeholder)">Pinterest</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer__bottom">
+        <p>© <span id="year"></span> LUMORA — Modern Kitchen. Demo project for portfolio use.</p>
+        <p>Designed &amp; built as a frontend showcase.</p>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
